@@ -1,4 +1,4 @@
-const port = process.env.PORT || 8081;
+const port = process.env.PORT || 8082;
 
 const express = require('express');
 const bodyParser = require('body-parser');
@@ -21,7 +21,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/auth', authRoute);
 app.use('/api', adminRoute);
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send('Techronx Server'))
 
 // Routes End
 
