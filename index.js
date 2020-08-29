@@ -20,7 +20,7 @@ app.use((req, res, next) => {
 
 // Routes
 app.use('/auth', authRoute);
-app.use('/api', adminRoute);
+// app.use('/api', adminRoute);
 app.use('/user', userRoute);
 app.get('/', (req, res) => res.send('Techronx Server'))
 
