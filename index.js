@@ -5,7 +5,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 const authRoute = require("./route/auth");
 const adminRoute = require("./route/admin");
-
+const userRoute = require("./route/consumer")
 
 const app = express();
 
@@ -21,6 +21,7 @@ app.use((req, res, next) => {
 // Routes
 app.use('/auth', authRoute);
 app.use('/api', adminRoute);
+app.use('/user', userRoute);
 app.get('/', (req, res) => res.send('Techronx Server'))
 
 // Routes End

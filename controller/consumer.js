@@ -19,6 +19,17 @@ exports.getService = (req, res, next) => {
 }
 
 
+exports.getSingleService = (req, res, next) => {
+    const serviceid = req.params.serviceid
+    Serviceintro.find({"serviceid" : `${serviceid}`})
+    .then(result => {
+        res.status(200).json({
+            data : result
+        })
+    })
+}
+
+
 exports.getServiceDetails = (req, res, next) => {
     const serviceid = req.params.serviceid
     Service.find({"serviceid" : `${serviceid}`})
@@ -90,19 +101,23 @@ exports.insertCustomer = (req, res, next) => {
     const name = req.body.name;
     const email = req.body.email;
     const phonenum = req.body.phonenum;
-    const occupation = req.body.occupation;
+    const occpation = req.body.occpation;
 
     const list = new Customer({
         name:name,
         email:email,
         phonenum:phonenum,
-        occupation:occupation
+        occpation:occpation
     })
 
     list.save()
     .then(result => {
+        console.log(result)
         res.status(200).json({
             data:result
         })
+    })
+    .catch(err => {
+        console.log(err)
     })
 }

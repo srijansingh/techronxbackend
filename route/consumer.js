@@ -1,7 +1,7 @@
 const express = require('express');
 
 const {
-    getService,getServiceDetails, getAllServiceDetails,
+    getService,getServiceDetails, getAllServiceDetails,getSingleService,
     getTestimonial,
     getAllPortfolio,getByIdPortfolio,
     getTeam,
@@ -13,6 +13,7 @@ const router = express.Router();
 //Service router
 
 router.get('/serviceintro', getService);
+router.get('/serviceintro/:serviceid', getSingleService);
 router.get('/services', getAllServiceDetails);
 router.get('/services/:serviceid', getServiceDetails); 
 

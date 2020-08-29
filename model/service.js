@@ -15,7 +15,7 @@ const schema = new Schema(
             type: String,
             required : true
         },
-        imagelink : {
+        imageurl : {
             type : String,
             required : true
         }
